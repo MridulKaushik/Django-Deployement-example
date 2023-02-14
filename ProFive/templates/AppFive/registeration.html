@@ -1,0 +1,21 @@
+{% extends 'AppFive/base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+<div class = "container-fluid jumbotron">
+    {% if registered %}
+        <h2>Thank you for registering!</h2>
+    {% else %}
+        <h2>Register here!!</h2>
+        <h3>Fill out of the form:</h3>
+ 
+        <form enctype = "multipart/form-data" method = "POST">
+            {% csrf_token %}
+            <div>{{user_form.as_p}}</div>
+            <div>{{ profile_form.as_p}}</div>
+            <input type="submit" value="Register"> 
+        </form>
+ 
+        {% endif %}
+{% endblock %}
