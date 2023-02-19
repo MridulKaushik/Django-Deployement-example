@@ -20,7 +20,7 @@ from AppFive import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index,name="homepage"),
-    path('appfive/',include("AppFive.urls")),
+    path('appfive/',include("AppFive.urls",namespace="appFive")),
     path('logout/',views.user_logout,name="logout"),
     path('special',views.special,name="special"),
 ]

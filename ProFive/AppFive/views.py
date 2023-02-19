@@ -26,7 +26,7 @@ def special(request):
 @login_required
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('AppFive/index'))
+    return HttpResponseRedirect(reverse('appFive:home'))
 
 def registeration(request):
 
